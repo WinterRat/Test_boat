@@ -1,0 +1,302 @@
+<?xml version="1.0" ?>
+<robot name="testship" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find testship_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find testship_description)/urdf/testship.trans" />
+<xacro:include filename="$(find testship_description)/urdf/testship.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.08105870889525456 -0.00011098977657938048 -0.018183020198951655" rpy="0 0 0"/>
+    <mass value="24.63020025957244"/>
+    <inertia ixx="0.766917" iyy="1.397795" izz="1.945279" ixy="0.000264" iyz="0.000272" ixz="-0.062443"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://testship_description/meshes/base_link.stl" scale="0.01 0.01 0.01"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://testship_description/meshes/base_link.stl" scale="0.01 0.01 0.01"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="top_1">
+  <inertial>
+    <origin xyz="-0.03384261607519356 6.8451838974255e-05 0.0022500000000004183" rpy="0 0 0"/>
+    <mass value="0.34029539991835445"/>
+    <inertia ixx="0.001651" iyy="0.01217" izz="0.013819" ixy="-6e-06" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.0 -0.0 -0.1275" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://testship_description/meshes/top_1.stl" scale="0.01 0.01 0.01"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.0 -0.0 -0.1275" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://testship_description/meshes/top_1.stl" scale="0.01 0.01 0.01"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="leftphcir_1">
+  <inertial>
+    <origin xyz="-2.1291291851799343e-07 -9.10812633647673e-09 -0.03383205917468599" rpy="0 0 0"/>
+    <mass value="0.23329485266794953"/>
+    <inertia ixx="7.5e-05" iyy="7.5e-05" izz="5.7e-05" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.55006 -0.1875 0.0525" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://testship_description/meshes/leftphcir_1.stl" scale="0.01 0.01 0.01"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.55006 -0.1875 0.0525" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://testship_description/meshes/leftphcir_1.stl" scale="0.01 0.01 0.01"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rightphcir_1">
+  <inertial>
+    <origin xyz="-2.1291291818492653e-07 9.109273862994982e-09 -0.03383205917468524" rpy="0 0 0"/>
+    <mass value="0.23329485266794966"/>
+    <inertia ixx="7.5e-05" iyy="7.5e-05" izz="5.7e-05" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.55006 0.1875 0.0525" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://testship_description/meshes/rightphcir_1.stl" scale="0.01 0.01 0.01"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.55006 0.1875 0.0525" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://testship_description/meshes/rightphcir_1.stl" scale="0.01 0.01 0.01"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin xyz="-0.000564819009046702 -1.4628926966516603e-05 0.019299145700540254" rpy="0 0 0"/>
+    <mass value="1.2982579906067508"/>
+    <inertia ixx="0.000618" iyy="0.00059" izz="0.000863" ixy="0.0" iyz="0.0" ixz="1.7e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.220557 0.005378 -0.132" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://testship_description/meshes/lidar_1.stl" scale="0.01 0.01 0.01"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.220557 0.005378 -0.132" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://testship_description/meshes/lidar_1.stl" scale="0.01 0.01 0.01"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="camerastand_1">
+  <inertial>
+    <origin xyz="0.003431675563682346 0.026010289854442734 0.21468634185462265" rpy="0 0 0"/>
+    <mass value="0.03710493249188583"/>
+    <inertia ixx="0.000118" iyy="8.1e-05" izz="4.4e-05" ixy="-0.0" iyz="-0.0" ixz="-4e-06"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.3 0.026 -0.132" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://testship_description/meshes/camerastand_1.stl" scale="0.01 0.01 0.01"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.3 0.026 -0.132" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://testship_description/meshes/camerastand_1.stl" scale="0.01 0.01 0.01"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="leftph_1">
+  <inertial>
+    <origin xyz="-0.005787798260305843 -0.0004797510100504332 -0.05043656414966752" rpy="0 0 0"/>
+    <mass value="0.6260636804872378"/>
+    <inertia ixx="0.00051" iyy="0.000766" izz="0.000346" ixy="-2.1e-05" iyz="-8e-06" ixz="-9.3e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.55006 -0.1875 0.1" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://testship_description/meshes/leftph_1.stl" scale="0.01 0.01 0.01"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.55006 -0.1875 0.1" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://testship_description/meshes/leftph_1.stl" scale="0.01 0.01 0.01"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rightph_1">
+  <inertial>
+    <origin xyz="-0.005787798844029801 -0.0004797326262145907 -0.05043656364633328" rpy="0 0 0"/>
+    <mass value="0.626063680487237"/>
+    <inertia ixx="0.00051" iyy="0.000766" izz="0.000346" ixy="-2.1e-05" iyz="-8e-06" ixz="-9.3e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.55006 0.1875 0.1" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://testship_description/meshes/rightph_1.stl" scale="0.01 0.01 0.01"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.55006 0.1875 0.1" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://testship_description/meshes/rightph_1.stl" scale="0.01 0.01 0.01"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="leftprop_1">
+  <inertial>
+    <origin xyz="-0.01276272305920545 -0.0007090167611358 9.104481688881894e-05" rpy="0 0 0"/>
+    <mass value="0.06590576270790414"/>
+    <inertia ixx="1.5e-05" iyy="1.1e-05" izz="1.1e-05" ixy="0.0" iyz="-1e-06" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.606267 -0.182841 0.1678" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://testship_description/meshes/leftprop_1.stl" scale="0.01 0.01 0.01"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.606267 -0.182841 0.1678" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://testship_description/meshes/leftprop_1.stl" scale="0.01 0.01 0.01"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rightprop_1">
+  <inertial>
+    <origin xyz="-0.012943919699533124 -0.0010732102971425794 9.40532622617507e-08" rpy="0 0 0"/>
+    <mass value="0.06590837354443096"/>
+    <inertia ixx="1.5e-05" iyy="1.1e-05" izz="1.1e-05" ixy="0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.606267 0.192159 0.1678" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://testship_description/meshes/rightprop_1.stl" scale="0.01 0.01 0.01"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.606267 0.192159 0.1678" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://testship_description/meshes/rightprop_1.stl" scale="0.01 0.01 0.01"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="depthcamera_1">
+  <inertial>
+    <origin xyz="0.0027434830937458354 -0.001814788507109455 0.020612533646283515" rpy="0 0 0"/>
+    <mass value="0.3595663734702526"/>
+    <inertia ixx="0.000774" iyy="0.000116" izz="0.000709" ixy="-6e-06" iyz="1.2e-05" ixz="2.8e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.276346 -0.0 -0.360379" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://testship_description/meshes/depthcamera_1.stl" scale="0.01 0.01 0.01"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.276346 -0.0 -0.360379" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://testship_description/meshes/depthcamera_1.stl" scale="0.01 0.01 0.01"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rigid 34" type="fixed">
+  <origin xyz="0.0 0.0 0.1275" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="top_1"/>
+</joint>
+
+<joint name="Rigid 35" type="fixed">
+  <origin xyz="-0.55006 0.1875 -0.0525" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="leftphcir_1"/>
+</joint>
+
+<joint name="Rigid 36" type="fixed">
+  <origin xyz="-0.55006 -0.1875 -0.0525" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="rightphcir_1"/>
+</joint>
+
+<joint name="Rigid 37" type="fixed">
+  <origin xyz="0.220557 -0.005378 0.0045" rpy="0 0 0"/>
+  <parent link="top_1"/>
+  <child link="lidar_1"/>
+</joint>
+
+<joint name="Rigid 38" type="fixed">
+  <origin xyz="-0.3 -0.026 0.0045" rpy="0 0 0"/>
+  <parent link="top_1"/>
+  <child link="camerastand_1"/>
+</joint>
+
+<joint name="Revolute 39" type="continuous">
+  <origin xyz="0.0 0.0 -0.0475" rpy="0 0 0"/>
+  <parent link="leftphcir_1"/>
+  <child link="leftph_1"/>
+  <axis xyz="0.0 -0.0 -1.0"/>
+</joint>
+
+<joint name="Revolute 40" type="continuous">
+  <origin xyz="0.0 0.0 -0.0475" rpy="0 0 0"/>
+  <parent link="rightphcir_1"/>
+  <child link="rightph_1"/>
+  <axis xyz="0.0 -0.0 -1.0"/>
+</joint>
+
+<joint name="Revolute 41" type="continuous">
+  <origin xyz="-0.056207 -0.004659 -0.0678" rpy="0 0 0"/>
+  <parent link="leftph_1"/>
+  <child link="leftprop_1"/>
+  <axis xyz="-0.996582 -0.082608 0.0"/>
+</joint>
+
+<joint name="Revolute 42" type="continuous">
+  <origin xyz="-0.056207 -0.004659 -0.0678" rpy="0 0 0"/>
+  <parent link="rightph_1"/>
+  <child link="rightprop_1"/>
+  <axis xyz="-0.996582 -0.082608 0.0"/>
+</joint>
+
+<joint name="Rigid 43" type="fixed">
+  <origin xyz="0.023654 0.026 0.228379" rpy="0 0 0"/>
+  <parent link="camerastand_1"/>
+  <child link="depthcamera_1"/>
+</joint>
+
+</robot>
